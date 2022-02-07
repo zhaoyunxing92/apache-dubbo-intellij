@@ -1,0 +1,40 @@
+plugins {
+    id 'org.jetbrains.intellij' version '1.3.1'
+    id 'java'
+}
+
+group 'org.apache.dubbo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+//    version = '2021.3.1'
+    updateSinceUntilBuild = false
+    // 指定本地idea版本
+    localPath = '/Users/docker/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/213.6461.79/IntelliJ IDEA.app'
+}
+patchPluginXml {
+    changeNotes = """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+test {
+    useJUnitPlatform()
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+}

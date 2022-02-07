@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>org.apache.dubbo.apache-dubbo</id>
+    <name>Apache-Dubbo</name>
+    <vendor email="zhaoyunxing@apache.org" url="https://github.com/zhaoyunxing92">zhaoyunxing</vendor>
+
+<!--    <description><![CDATA[-->
+<!--    Enter short description for your plugin here.<br>-->
+<!--    <em>most HTML tags may be used</em>-->
+<!--    ]]></description>-->
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="apache-dubbo" class="org.apache.dubbo.action.ApacheDubbo" text="Apache Dubbo" description="Apache dubbo">
+            <add-to-group group-id="ToolsMenu" anchor="before" relative-to-action="tasks.group"/>
+        </action>
+    </actions>
+</idea-plugin>
